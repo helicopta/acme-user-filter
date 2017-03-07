@@ -1,0 +1,13 @@
+{% extends './index.html' %}
+{% block content %}
+					<tbody>
+						{% for user in filteredUsers %}
+							<tr>
+								<td>{{user.name.split(' ')[0]}}</td>
+								<td>{{user.name.split(' ')[1]}}</td>
+								<td>{{user.name.split(' ')[0]+'.'+user.name.split(' ')[1]}}@example.com</td>
+								<td>({{user.location}})</td>
+							</tr>
+						{% endfor %}													
+					</tbody>
+{% endblock %}

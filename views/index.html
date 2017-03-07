@@ -1,0 +1,32 @@
+<html>
+<body style='font-family: sans-serif'>
+	<div class="container">
+		<h1> Acme User Filter</h1>
+		<form method="POST" action="/regenerate">
+			<button class="btn-danger" href = "/regenerate"> Regenerate Users</button>
+		</form>
+		<div class="row">
+			<div class="col-sm-8">
+				<ul class="nav nav-tabs">
+					{% for user in Object.keys(list) %}
+						<a href="/user/filter/{{user}}">{{user}}  {{list[user]}}</a>
+					{% endfor %}
+					<li><a href="/">ALL</a></li>
+				</ul>
+				<table>
+					<thread>
+						<tr>
+							<th>First Name</th>
+							<th>Last Name</th>
+							<th>Email</th>
+							<th>Location</th>
+						</tr>
+					<thread>
+					{% block content %}
+					{% endblock %}
+				</table>
+			</div>			
+		</div>
+	</div>	
+</body>
+</html>
